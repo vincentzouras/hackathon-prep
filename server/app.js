@@ -4,6 +4,7 @@ import connectDB from "./config/db.js";
 import userRoutes from "./routes/userRoutes.js";
 import cors from "cors";
 import morgan from "morgan";
+import movieRoutes from "./routes/movieRoutes.js";
 
 dotenv.config();
 
@@ -15,6 +16,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.use("/api/users", userRoutes);
+app.use("/api/movies", movieRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is working...");
